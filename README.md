@@ -1,4 +1,4 @@
-# CuestasBank (Backend)
+# CuestasBank
 
 CuestasBank is a secure banking application built with Java and Spring (front in Angular). This project focuses on providing a robust and secure platform for managing bank accounts, transactions, and user authentication.
 
