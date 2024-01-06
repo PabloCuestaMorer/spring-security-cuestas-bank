@@ -2,13 +2,13 @@ package pcuesta.cuestasbank.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import pcuesta.cuestasbank.model.Customer;
+import pcuesta.cuestasbank.model.Cards;
 
 import java.util.List;
 
 @Repository
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+public interface CardsRepository extends CrudRepository<Cards, Long> {
+	
+	List<Cards> findByCustomerId(int customerId);
 
-    List<Customer> findByEmail(String email);
-    
 }
