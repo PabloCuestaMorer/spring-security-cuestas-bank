@@ -1,29 +1,35 @@
 .i-top-header {
-  height: 70px;
+  height: 70px; /* Header height, consider adjusting if the logo is still too tall */
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.46);
   background-color: #171b1b;
-  background-image: linear-gradient(90deg, #000000 0, #000000 100%);
   display: flex;
+  align-items: center; /* This will vertically center the contents of the header */
   position: relative;
 }
+
 .top-section {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 10px 15px; /* Adjusted padding to provide more space */
 }
+
 .hleft {
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .hleft .logo {
-  margin-right: 18px;
-  padding-left: 18px;
+  margin-right: 10px; /* Adjust the right margin if necessary */
+  padding-left: 0; /* Remove padding to allow logo to fit */
 }
+
 .hleft .logo img {
-  max-width: 150px;
+  max-height: 60px; /* Set a max-height to ensure logo fits within the header */
+  width: auto; /* Adjust width automatically to maintain aspect ratio */
   display: block;
 }
+
 .hleft .logo .partner-txt {
   position: absolute;
   font-size: 10px;
@@ -32,53 +38,10 @@
   top: 10px;
 }
 
-.top-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
 .wrapper {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-}
-
-.hleft {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.hleft .logo {
-  margin-right: 18px;
-  padding-left: 18px;
-}
-
-a, a:link:hover, a:visited:hover {
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.hleft .logo img {
-  max-width: 150px;
-  display: block;
-}
-
-img {
-  max-width: 100%;
-  vertical-align: middle;
 }
 
 .hright {
@@ -93,38 +56,58 @@ img {
   display: flex;
 }
 
-.hright ul li:first-child {
-  margin-left: 0;
-}
-
+/* Adjusted navigation item margin */
 .hright ul li {
-  margin-left: 45px;
+  margin-left: 30px; /* Adjusted from 45px */
   position: relative;
 }
 
-ul, ul li {
-  list-style: none;
-}
-
-.hright ul li.active a, .hright ul li:hover a {
-  border-top: 6px solid #57b846;
-  padding-top: 20px;
-}
-
+/* Adjusted navigation item font size */
 .hright ul li a {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px; /* Adjusted from 18px */
   line-height: 22px;
   color: #fff;
   padding-bottom: 8px;
 }
 
-a, a:link:hover, a:visited:hover {
-  text-decoration: none;
+/* Media query for responsive adjustments */
+@media (max-width: 768px) {
+  .top-section {
+    padding: 5px 10px; /* Even less padding on smaller screens */
+  }
+
+  .hleft .logo img {
+    max-height: 50px; /* Smaller logo height for mobile */
+    width: auto; /* Adjust width automatically to maintain aspect ratio */
+  }
+
+  .hright ul li {
+    margin-left: 20px; /* Smaller margins for navigation items */
+  }
+
+  .hright ul li a {
+    font-size: 14px; /* Smaller font size for navigation text */
+  }
+
+  .mnav_hb { /* Show hamburger menu */
+    display: block;
+  }
+
+  .hright { /* Hide horizontal navigation */
+    display: none;
+  }
 }
 
-.hide {
-  display: none !important;
+.mnav_hb {
+  display: none; /* Hamburger menu hidden by default */
+}
+
+/* Ensures hamburger menu is visible on smaller screens */
+@media (max-width: 768px) {
+  .mnav_hb {
+    display: block;
+  }
 }
 
 .hamburger .line {
@@ -133,8 +116,8 @@ a, a:link:hover, a:visited:hover {
   background-color: #ecf0f1;
   display: block;
   margin: 8px auto;
-  -webkit-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
+/* Other styles remain unchanged */
+/* ... */
