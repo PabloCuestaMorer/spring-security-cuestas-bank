@@ -209,7 +209,7 @@ CREATE TABLE `customer`
 
 INSERT INTO `customer` (`name`, `email`, `mobile_number`, `pwd`, `role`, `create_dt`)
 VALUES ('Happy', 'happy@example.com', '9876548337', '$2y$12$oRRbkNfwuR8ug4MlzH5FOeui.//1mkd.RsOAJMbykTSupVy.x/vb2',
-        'admin', CURDATE());
+        'ADMIN', CURDATE());
 
 
 --
@@ -318,3 +318,18 @@ VALUES ('COVID-19 Insurance',
         CURDATE() - INTERVAL 30 DAY, CURDATE() + INTERVAL 30 DAY, CURDATE(), null);
 
 -- Dump completed on 2024-01-06 18:29:29
+
+CREATE TABLE `authorities` (
+                               `id` int NOT NULL AUTO_INCREMENT,
+                               `customer_id` int NOT NULL,
+                               `name` varchar(50) NOT NULL,
+                               PRIMARY KEY (`id`),
+                               KEY `customer_id` (`customer_id`),
+                               CONSTRAINT `authorities_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)
+);
+
+INSERT INTO `authorities` (`customer_id`, `name`)
+VALUES (1, 'ROLE_USER');
+
+INSERT INTO `authorities` (`customer_id`, `name`)
+VALUES (1, 'ROLE_ADMIN');

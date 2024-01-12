@@ -29,6 +29,6 @@ public class ContactController {
     public String getServiceReqNumber() {
         Random random = new Random();
         int ranNum = random.nextInt(999999999 - 9999) + 9999;
-        return "SR"+ranNum;
+        return "SR" + ranNum;
     }
 }
